@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "image": "/images/foods_dessest/d1.jpg",
+        "alt":"1",
+        "title":"Ice-cream",
+        "price":25.00,
+        "rate":4,
+        "type":1,
+        "description":"is a course that concludes a meal. The course usually consists of sweet foods"
+    },
+    {
+        "id": 2,
+        "image": "/images/foods_dessest/d2.jpg",
+        "alt":"2",
+        "title":"Magarong",
+        "price":60.00,
+        "rate":3,
+        "type":1,
+        "description":"is a course that concludes a meal. The course usually consists of sweet foods"
+    },
+    {
+        "id": 3,
+        "image": "/images/foods_dessest/d3.jpg",
+        "alt":"3",
+        "title":"Cake",
+        "price":50.00,
+        "rate":4,
+        "type":1,
+        "description":"is a course that concludes a meal. The course usually consists of sweet foods"
+    },
+    {
+        "id": 4,
+        "image": "/images/foods_dessest/d4.jpg",
+        "alt":"4",
+        "title":"Donut",
+        "price":45.00,
+        "rate":5,
+        "type":1,
+        "description":"is a course that concludes a meal. The course usually consists of sweet foods"
+    }
+]

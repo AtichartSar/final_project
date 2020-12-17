@@ -1,0 +1,36 @@
+{
+    "groupfood": [
+         {
+             "id": 1,
+             "image": "/images/groupfoods/dessert.jpg",
+             "alt":"1",
+             "title":"Dessert",
+             "group":1
+           
+         },
+         {
+             "id": 2,
+             "image": "/images/groupfoods/inter.jpg",
+             "alt":"2",
+             "title":"Inter",
+             "group":2
+          
+         },
+         {
+             "id": 3,
+             "image": "/images/groupfoods/japanese.jpg",
+             "alt":"3",
+             "title":"Japanese",
+             "group":3
+     
+         },
+         {
+             "id": 4,
+             "image": "/images/groupfoods/thai.jpg",
+             "alt":"4",
+             "title":"Thai",
+             "group":4
+             
+         }
+     ]
+ }

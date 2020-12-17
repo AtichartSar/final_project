@@ -1,0 +1,17 @@
+
+
+img{
+    height: 180px;
+}
+h3{
+    padding-top: 5px;
+    padding-bottom: 0;
+}
+.button_menu{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.button_menu .ant-btn{
+    width: 80px;
+}

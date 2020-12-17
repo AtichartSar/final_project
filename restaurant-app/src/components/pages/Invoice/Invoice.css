@@ -1,0 +1,71 @@
+.invoice {
+    display: flex;
+    background: linear-gradient(180deg, #eaeff0 45%, #41aea9 126%);
+}
+.invoice .invoice__content{
+
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 150px auto;
+    padding: 40px;
+
+    min-width: 350px;
+    max-width: 350px;
+    border: 2px solid black;
+    border-radius: 7%;
+    background-color: white;
+}
+
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    .ticket *{
+        visibility: visible;
+      }
+}
+
+td,
+th,
+tr,
+table {
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+
+td.description,
+th.description {
+    width:100px;
+    max-width: 100px;
+}
+
+td.quantity,
+th.quantity {
+    width: 100px;
+    max-width: 100px;
+    word-break: break-all;
+}
+
+td.price,
+th.price {
+    width: 150px;
+    max-width:150px;
+    word-break: break-all;
+}
+
+.centered {
+    text-align: center;
+    align-content: center;
+}
+
+.ticket {
+    width: 200px;
+    max-width: 200px;
+}
+
+img {
+    max-width: inherit;
+    width: inherit;
+}

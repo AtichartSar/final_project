@@ -1,0 +1,16 @@
+
+/* .home{
+    background: linear-gradient(180deg, #eaeff0 45%, #9f01ea 126%);
+} */
+
+.home .home__content{
+    padding:100px 50px;
+}
+.home .home_selectMenu{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.menuFood_component{
+   margin: 3rem 0;
+}

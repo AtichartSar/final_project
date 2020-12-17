@@ -1,0 +1,24 @@
+.profile{
+    display: flex;
+    background: linear-gradient(180deg, #eaeff0 45%, #41aea9 126%);
+    height: 80vh;
+}
+.profile__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 150px auto;
+    padding: 40px;
+    /* width: auto; */
+    border: 2px solid black;
+    border-radius: 7%;
+    background-color: white;
+    
+}
+.name>h3,.name>p ,.email>h3,.email>p,.id>h3,.id>p{
+ display: inline;
+ margin-right: 5px;
+ font-size: 16px;
+ line-height: 28px;
+ 
+}

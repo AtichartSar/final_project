@@ -1,0 +1,24 @@
+{
+   "carousel": [
+        {
+            "id": 1,
+            "image": "/images/carousels/d2.jpg",
+            "alt":"1"
+        },
+        {
+            "id": 2,
+            "image": "/images/carousels/d3.jpg",
+            "alt":"2"
+        },
+        {
+            "id": 3,
+            "image": "/images/carousels/d4.jpg",
+            "alt":"3"
+        },
+        {
+            "id": 4,
+            "image": "/images/carousels/d5.jpg",
+            "alt":"4"
+        }
+    ]
+}

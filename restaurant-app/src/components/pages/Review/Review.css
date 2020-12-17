@@ -1,0 +1,12 @@
+.review .review__content{
+    padding:100px 50px;
+}
+.review__5,.review__4,.review__3,.review__2,.review__1{
+    display: flex;
+ 
+    align-items: center!important;
+}
+.comment_content{
+    overflow: scroll;
+    height: 150px;
+}

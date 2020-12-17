@@ -1,0 +1,20 @@
+.payment .payment__content{
+    padding:100px 50px;
+    font-size: 16px;
+}
+
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td {
+    font-size: 16px;
+}
+
+.ant-table-thead > tr > th{
+    font-weight: bold;
+}
+.button_content{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    
+    gap: 12px;
+}

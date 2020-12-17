@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "image": "/images/foods_inter/i1.jpg",
+        "alt":"1",
+        "title":"Steak",
+        "price":300.00,
+        "rate":4,
+        "type":2,
+        "description":"is a course that concludes a meal. The course usually consists of sweet foods"
+    },
+    {
+        "id": 2,
+        "image": "/images/foods_inter/i2.jpg",
+        "alt":"2",
+        "title":"Pizza",
+        "price":150.00,
+        "rate":3,
+        "type":2,
+        "description":"is a course that concludes a meal. The course usually consists of sweet foods"
+    },
+    {
+        "id": 3,
+        "image": "/images/foods_inter/i3.jpg",
+        "alt":"3",
+        "title":"Pizza",
+        "price":80.00,
+        "rate":4,
+        "type":2,
+        "description":"is a course that concludes a meal. The course usually consists of sweet foods"
+    }
+
+]

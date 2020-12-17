@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "image": "/images/foods_thai/t1.jpg",
+        "alt":"1",
+        "title":"Steak",
+        "price":150.00,
+        "rate":4,
+        "type":4,
+        "description":"is a course that concludes a meal. The course usually consists of sweet foods"
+    },
+    {
+        "id": 2,
+        "image": "/images/foods_thai/t2.jpg",
+        "alt":"2",
+        "title":"Pizza",
+        "price":250.00,
+        "rate":3,
+        "type":4,
+        "description":"is a course that concludes a meal. The course usually consists of sweet foods"
+    },
+    {
+        "id": 3,
+        "image": "/images/foods_thai/t3.jpg",
+        "alt":"3",
+        "title":"Pizza",
+        "price":70.00,
+        "rate":4,
+        "type":4,
+        "description":"is a course that concludes a meal. The course usually consists of sweet foods"
+    }
+
+]
