@@ -14,7 +14,7 @@ import {
 import axios from '../../../config/axios';
 const { Option } = Select;
 const { TextArea } = Input;
-function ModalEditMenu({ model, visible, title, handleVisible, type, rate, price, description, id }) {
+function ModalEditMenu({fetchMenu, model, visible, title, handleVisible, type, rate, price, description, id }) {
     const [dataReview, setDataReview] = useState(null)
     const [valuePrice, setValuePrice] = useState('')
     const [titleReview, setTitleReview] = useState('')
@@ -52,8 +52,9 @@ function ModalEditMenu({ model, visible, title, handleVisible, type, rate, price
         const payload = { ...values, price: valuePrice }
         console.log("payload", payload);
         console.log("id", id);
-        await axios.put(`/menu/${1}`, { ...payload })
+        await axios.put(`/menu/${id}`, { ...payload })
         handleVisible()
+        fetchMenu()
     }
     return (
         <>

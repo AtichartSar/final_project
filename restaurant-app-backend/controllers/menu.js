@@ -62,12 +62,12 @@ const deleteMenu = async (req, res) => {
     res.status(204).send();
 }
 const upDateMenu = async (req, res) => {
-    const { title, price, rate, description } = req.body
+    const { name, price, rate, description } = req.body
     const targetId = req.params.id;
 
     console.log(`description : ${description} targetId : ${targetId}`);
     await db.Menu.update({
-        title: title,
+        title: name,
         price: price,
         rate: rate,
         description: description,

@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Toolbar.css'
 import { useSelector, useDispatch } from 'react-redux';
 import {
     selectCart
 } from '../../../features/cart/cartSlice';
+import {
+    getUser
+} from '../../../features/user/userSlice'
 import {
     MenuOutlined,
 } from '@ant-design/icons';
@@ -12,9 +15,23 @@ import { Badge, Button, Switch } from 'antd';
 import {
     ShoppingCartOutlined,
 } from '@ant-design/icons';
+
+import LocalStorage from '../../../services/localStorageService'
+import jwtDecode from 'jwt-decode'
 function Toolbar(props) {
 
     const itemsCart = useSelector(selectCart);
+    const user = useSelector(getUser);
+    const [dataProfile, setDataProfile] = useState()
+useEffect(() => {
+    const token = LocalStorage.getToken()
+    if(token){
+           const { name, id, email } = jwtDecode(token)
+    setDataProfile(email)
+    }
+ 
+}, [])
+
     return (
         <header className='toolbar'>
             <nav className='toolbar_navigation'>
@@ -24,14 +41,15 @@ function Toolbar(props) {
                     </button>
                 </div>
                 <div className='toolbar_logo'>
-                    <a href="/">THE LOGO</a>
+                    <a href="#" class="ico">Cafe</a>
+                    {/* <a href="/"></a> */}
                 </div>
-                <div className='spacer'></div>njjkj
+                {/* <div className='spacer'></div>njjkj */}
                 <div className='spacer'></div>
                 <div className='toolbar_navigation_item'>
 
                     <ul>
-                        <li> <a href="/">OOP1</a></li>
+                        <li> <a href="/profile">{dataProfile ||user}</a></li>
                         <li>
                             <Link to={'/payment'}>
                                 <Badge count={itemsCart.length}>

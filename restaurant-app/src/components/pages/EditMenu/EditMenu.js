@@ -114,6 +114,7 @@ function EditMenu() {
                 id={editTarget?.id}
                 form={form}
                 description={editTarget?.description}
+                fetchMenu={fetchMenu}
                 handleVisible={handleVisibleEdit} />
             <ModalCreateMenu visible={visibleCreate} handleVisible={handleVisibleCreate} />
 
