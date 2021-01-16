@@ -36,7 +36,7 @@ function Dashbord() {
             setChartData({
                 labels: [...chart?.map((item) => item.date_col_formed).reverse()],
                 datasets: [{
-                    label: 'hello world',
+                    label: 'กราฟรายงานการขาย',
                     data: [...chart?.map((item) => item.total_amount).reverse()],
                     backgroundColor: 'rgba(75,192,192,0.6)',
                     borderWidth: 4
@@ -46,20 +46,6 @@ function Dashbord() {
 
     }
 
-
-
-    // const chartData = () => {
-
-    //      setChartData({
-    //         labels: [],
-    //         datasets: [{
-    //             label: 'hello world',
-    //             data: [32, 45, 12, 67, 69],
-    //             backgroundColor: 'rgba(75,192,192,0.6)',
-    //             borderWidth: 4
-    //         }]
-    //     })
-    // }
 
     useEffect(() => {
         fetchDashbord()
@@ -87,7 +73,6 @@ function Dashbord() {
                         </Col>
                     </Row>
                     <div className="button_content">
-                        {/* <Button onClick={() => handleClick()} className='submitButton' type="primary" size={'large'}>  พิมพ์</Button> */}
                         <Button onClick={() => (history.push('/home'))} className='cancelButton' type="primary" size={'large'}>  กลับ</Button>
                     </div>
                 </Card>

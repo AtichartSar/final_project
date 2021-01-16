@@ -7,7 +7,7 @@ import { Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import './EditMenu.css'
 
-function ModalCreateMenu({ visible, handleVisible }) {
+function ModalCreateMenu({ visible, handleVisible, fetchMenu }) {
     const [dataReview, setDataReview] = useState(null)
     const [picture, setPicture] = useState(null);
     const [imgData, setImgData] = useState(null);
@@ -69,7 +69,7 @@ function ModalCreateMenu({ visible, handleVisible }) {
                     </Col>
                     <Col md={24} lg={16} >
                         <div className="progressbar_content">
-                            <FormEdit handleVisible2={handleVisible}  picture={picture}    />
+                            <FormEdit handleVisible2={handleVisible}  picture={picture}  fetchMenuEdit={fetchMenu}   />
                         </div>
 
 

@@ -1,6 +1,7 @@
 
 import { Row, Col, Card } from 'antd';
 import React, { useEffect, useState } from 'react'
+import Carousel from 'react-elastic-carousel'
 import CarouselComponent from '../../CarouselComponent/CarouselComponent';
 import MenuItem from '../../MenuItem/MenuItem'
 import ResponseNavbar from '../../ResponseNavbar/ResponseNavbar';
@@ -15,6 +16,7 @@ import './Home.css'
 import ModalComponent from '../../ModalComponent';
 import MenuFood from './MenuFood';
 import axios from '../../../config/axios'
+import MenuCarousel from '../../MenuCarousel/MenuCarousel';
 function Home() {
 
     const [groupFood, setgroupFood] = useState(null)
@@ -37,6 +39,12 @@ function Home() {
         console.log("<===[ group ]===>", groupFood);
     }, [])
 
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+        { width: 768, itemsToShow: 3 },
+        { width: 1200, itemsToShow: 4 }
+      ];
 
     const handleClickgroup =async (group) => {
         try {
@@ -79,24 +87,23 @@ function Home() {
                 </Row>
             </Card>
         </div>
-    const menuFoodContent = selectGroup && <MenuFood selectGroup={selectGroup} />
 
-    const modalContent = selectGroup == null ? null : <div className="home_selectMenu">
-        <ModalComponent >
-            <Row gutter={[0, 40]} justify='center' style={{ marginTop: '1rem' }}>
-                {groupFood?.map(item => (
-                    <Col key={item.id}
-                        onClick={() => handleClickgroup(item.group)} md={24} md={8} lg={6} >
-                        <MenuItem
+    const menuFoodContent = selectGroup && 
+    <MenuFood selectGroup={selectGroup} />
 
-                            title={item.title}
-                            description={item.description}
-                            image={item.image}
-                        />
-                    </Col>
-                ))}
-            </Row>
-        </ModalComponent>
+    const modalContent = selectGroup && 
+    <div className="home_selectMenu">
+            <Carousel breakPoints={breakPoints}>
+                {groupFood.map((item)=>
+                <div onClick={() => handleClickgroup(item.group)} className='menu_carousel'> 
+                    <MenuItem
+                        title={item.title}
+                        description={item.description}
+                        image={item.image}
+                    />
+                </div>
+                )}
+            </Carousel>
     </div>
 
     return (

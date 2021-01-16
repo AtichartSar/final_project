@@ -13,7 +13,7 @@ import {
 } from '@ant-design/icons';
 const { Option } = Select;
 const { TextArea } = Input;
-function FormEdit({picture,handleVisible2}) {
+function FormEdit({picture,handleVisible2,fetchMenuEdit}) {
     // const [onChange, setOnChange] = useState('')
     const [valuePrice, setValuePrice] = useState('')
 
@@ -37,6 +37,7 @@ function FormEdit({picture,handleVisible2}) {
         await axios.post('/menu',formData)
         console.log("data",Object.fromEntries(formData))
         handleVisible2()
+        fetchMenuEdit()
     };
     return (
         <>
@@ -61,9 +62,8 @@ function FormEdit({picture,handleVisible2}) {
                     <Select  placeholder="เลือกประเภทเมนู" >
                         <Option value={1}>อาหารไทย</Option>
                         <Option value={2}>อายหารญี่ปุ่น</Option>
-                        <Option value={3}>อาหารฝรั่ง</Option>
-                        <Option value={4}>ของหวาน</Option>
-
+                        <Option value={3}>ของหวาน</Option>
+                        <Option value={4}>อาหารฝรั่ง</Option>
                     </Select>
                 </Form.Item>
                 <Form.Item name="rate" label="คะแนน" >

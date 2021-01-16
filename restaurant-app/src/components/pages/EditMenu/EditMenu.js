@@ -7,7 +7,7 @@ import {
     SettingOutlined,
 
 } from '@ant-design/icons';
-import { Form} from 'antd';
+import { Form } from 'antd';
 import { useHistory } from 'react-router-dom';
 import ModalEditMenu from './ModalEditMenu';
 import ModalCreateMenu from './ModalCreateMenu';
@@ -30,9 +30,9 @@ function EditMenu() {
         },
         {
             title: 'ประเภทอาหาร',
-            dataIndex: ["MenuType","title"],
+            dataIndex: ["MenuType", "title"],
             key: 'type',
-            
+
         },
         {
             title: 'ราคา',
@@ -51,10 +51,10 @@ function EditMenu() {
 
     ]
 
-    const fetchMenu=async ()=>{
-        const httpResponse  = await axios.get('/menu')
+    const fetchMenu = async () => {
+        const httpResponse = await axios.get('/menu')
         setdata(httpResponse.data)
-        console.log("data",data);
+        console.log("data", data);
     }
     useEffect(() => {
         // const data = [{
@@ -78,16 +78,16 @@ function EditMenu() {
         console.log("editTarget", editTarget);
     }
     const handleVisibleEdit = () => {
-        
+
         setEditTarget(null)
         setVisibleEdit(false)
-        console.log("editTarget",editTarget);
-        
+        console.log("editTarget", editTarget);
+
     }
     const handleVisibleCreate = () => {
         setEditTarget(null)
         setVisibleCreate(false)
-       
+
     }
     return (
 
@@ -115,8 +115,13 @@ function EditMenu() {
                 form={form}
                 description={editTarget?.description}
                 fetchMenu={fetchMenu}
-                handleVisible={handleVisibleEdit} />
-            <ModalCreateMenu visible={visibleCreate} handleVisible={handleVisibleCreate} />
+                handleVisible={handleVisibleEdit}
+            />
+            <ModalCreateMenu
+                visible={visibleCreate}
+                handleVisible={handleVisibleCreate}
+                fetchMenu={fetchMenu}
+            />
 
         </div>
     )

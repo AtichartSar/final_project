@@ -4,12 +4,6 @@ import { Bar } from 'react-chartjs-2'
 
 function ChartComponent({chartData}) {
 
-
-    // useEffect(() => {
-    //     console.log("charts",charts);
-    //     chart()
-    // }, [])
-
     return (
         
         <div style={{ width: '500px'}}>
