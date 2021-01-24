@@ -15,14 +15,7 @@ const createMenu = async (req, res) => {
     const {  title,price, rate, description,type } = JSON.parse(req.body.payload)
     // console.log("name",title);
     const image = req.file.path
-    // } catch (error) {
-    //     console.log(error);
-    // }
-    
 
-    // const createMenuType = await db.MenuType.create({
-    //     name: name,
-    // });
 
     const newMenu = await db.Menu.create({
         title: title,

@@ -6,14 +6,18 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import LocalStorageService from '../../../services/localStorageService'
 import axios from '../../../config/axios';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom'
 import {
 setUser,getUser
 } from '../../../features/user/userSlice'
-
+import {
+    resetCart
+} from '../../../features/cart/cartSlice'
+import jwtDecode from 'jwt-decode'
 function Login() {
     const user = useSelector(getUser);
     const dispatch = useDispatch();
-
+const history = useHistory()
 
     const onFinish = async (values) => {
         console.log('Success:', values);
@@ -25,10 +29,16 @@ function Login() {
         try {
            const res=  await axios.post('/user/login', payload)
             LocalStorageService.setToken(res.data.token)
-            dispatch(setUser('user'))
+            const {role}=jwtDecode(res.data.token)
+            if(role=='admin'){
+               dispatch(setUser('user')) 
+            }else{
+                history.push('/home')
+            }
             notification.success({
                 message: `${res.data.message}`,
             });
+            dispatch(resetCart())
         } catch (error) {
             notification.error({
                 message: `การเข้าสู่ระบบล้มเหลว ${error}`,

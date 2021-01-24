@@ -6,8 +6,9 @@ import jwtDecode from 'jwt-decode'
 import { Button } from 'antd'
 import { useSelector, useDispatch } from 'react-redux';
 import {
-setUser,getUser
+    setUser, getUser
 } from '../../../features/user/userSlice'
+import { useHistory } from 'react-router-dom'
 function Profile() {
     //     email: "naruotoman726@gmail.com"
     // exp: 1608219567
@@ -18,20 +19,26 @@ function Profile() {
     const [dataProfile, setDataProfile] = useState({
         name: '',
         id: 0,
-        email: ''
+        email: '',
+        role: ''
     })
-
+    let history = useHistory();
     useEffect(() => {
         const token = LocalStorage.getToken()
-        const { name, id, email } = jwtDecode(token)
-        setDataProfile({
-            name, id, email
-        })
-        console.log("userss", dataProfile);
+        if (token) {
+            const { name, id, email, role } = jwtDecode(token)
+            setDataProfile({
+                name, id, email, role
+            })
+            console.log("userss", dataProfile);
+        } else {
+            history.push('/home')
+        }
+
     }, [])
     const handleClick = () => {
+        window.location.reload();
         LocalStorage.removeToken()
-        // setRole('guest')
         dispatch(setUser('guest'))
     }
     return (
@@ -51,6 +58,9 @@ function Profile() {
                     <div className='id'>
                         <h3>ไอดี :</h3><p>{dataProfile.id}</p>
 
+                    </div>
+                    <div className='role'>
+                        <h3>สิทธิ :</h3><p>{dataProfile.role == 'addmin' ? dataProfile.role : 'guest'}</p>
                     </div>
                 </div>
                 <Button onClick={() => handleClick()} className='cancelButton' type="primary" size={'small'}>  ออกจากระบบ</Button>

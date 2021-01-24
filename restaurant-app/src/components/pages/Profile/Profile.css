@@ -15,7 +15,7 @@
     background-color: white;
     
 }
-.name>h3,.name>p ,.email>h3,.email>p,.id>h3,.id>p{
+.name>h3,.name>p ,.email>h3,.email>p,.id>h3,.id>p,.role>h3,.role>p{
  display: inline;
  margin-right: 5px;
  font-size: 16px;

@@ -9,11 +9,12 @@ import {
   selectCart
 } from '../../features/cart/cartSlice';
 
+import { SmileOutlined } from '@ant-design/icons';
 import { useHistory } from "react-router-dom";
 import { Card } from 'antd';
 import './MenuItem.css'
 import { Rate } from 'antd';
-import { Button } from 'antd';
+import { Button, notification } from 'antd';
 const { Meta } = Card;
 
 function MenuItem({ title, description, image, rate, price, showbtn, model }) {
@@ -23,17 +24,29 @@ function MenuItem({ title, description, image, rate, price, showbtn, model }) {
   let history = useHistory();
   const handleclickReview = () => {
     history.push({
-      pathname:'/review',
+      pathname: '/review',
       state: { detail: model.id }
 
     }
-      )
+    )
   }
-  const handleAddToCart=()=>{
+  const handleAddToCart = () => {
+
+    notification.open({
+      icon: <SmileOutlined style={{ color: '#108ee9' }} />,
+      message: 'เพิ่มสินค้า',
+      duration: 2,
+      placement:'bottomRight',
+      description:
+        `${title} 
+         ราคา ${price} `,
+
+    });
+
     dispatch(addToCart({
-      item:model
+      item: model
     }
-      
+
     ))
   }
   console.log(countss);
@@ -42,12 +55,20 @@ function MenuItem({ title, description, image, rate, price, showbtn, model }) {
   const rateContent = rate && <Rate disabled allowHalf defaultValue={rate} />
   const buttonContent = showbtn &&
     <div className='button_menu'>
-      <Button className="reviewButton" onClick={() => handleclickReview()} type="primary" size={'large'}>
+      <Button
+        className="reviewButton"
+        onClick={() => handleclickReview()}
+        type="primary"
+        size={'large'}>
         รีวิว
-  </Button>
-      <Button className='submitButton' onClick={() => handleAddToCart()} type="primary" size={ 'large' }>
+      </Button>
+      <Button
+        className='submitButton'
+        onClick={() => handleAddToCart()}
+        type="primary"
+        size={'large'}>
         เลือก
-  </Button>
+      </Button>
     </div>
 
   return (
@@ -58,7 +79,7 @@ function MenuItem({ title, description, image, rate, price, showbtn, model }) {
         cover={<img alt="example" src={image} />}
       >
         <Meta title={title} description={description} />
-        
+
         {priceContent}
         {rateContent}
         {buttonContent}

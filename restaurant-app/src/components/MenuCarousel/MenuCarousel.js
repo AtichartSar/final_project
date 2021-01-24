@@ -9,11 +9,6 @@ function MenuCarousel({ groupFood }) {
     console.log("state",state);
     return (
         <div className='menucarousel'>
-            {/* <MenuItem
-                        title={groupFood[0].title}
-                        description={groupFood[0].description}
-                        image={groupFood[0].image}
-                    /> */}
             <Carousel>
                 {state.map((item)=>
                     <MenuItem

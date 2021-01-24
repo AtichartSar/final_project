@@ -56,6 +56,7 @@ export default {
             components.payment,
             components.Review,
             components.Invoice,
+            components.profile,
         ],
         redirectRoutes: '/home'
     },

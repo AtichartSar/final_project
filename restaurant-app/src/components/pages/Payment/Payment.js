@@ -14,29 +14,35 @@ import {
   decreaseItem,
   cancelAllItem
 } from '../../../features/cart/cartSlice';
+
 import {
   PlusCircleOutlined,
   MinusCircleOutlined,
   DeleteOutlined,
 
 } from '@ant-design/icons';
+import LocalStorage from '../../../services/localStorageService'
 import axios from '../../../config/axios'
-
+import jwtDecode from 'jwt-decode'
 {/* <DeleteOutlined /> */ }
 
 
 
 function Payment() {
   const [dataCart, setDataCart] = useState(null)
+  // const [dataProfile, setDataProfile] = useState()
   const cart = useSelector(selectCart);
+
   const dispatch = useDispatch();
   let history = useHistory();
+ 
 
 
   useEffect(() => {
     const dataCart = getCartTotal(cart)
+    // const token = LocalStorage.getToken()
     setDataCart(dataCart)
-    console.log("dataCart", dataCart);
+    // setDataProfile({...jwtDecode(token)})
   }, [cart])
 
   // alt: "2"
@@ -94,7 +100,7 @@ function Payment() {
       key: 'price',
       render: (text, record) => (
         <Space size="middle">
-          <label>{text}$</label>
+          <label>{text}$</label> 
           <a onClick={() => handleCancelAllItem(record.id)}><DeleteOutlined style={{ color: '#FF0000' }} /></a>
         </Space>
       )

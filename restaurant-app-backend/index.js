@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const morgan = require('morgan')
-const port = process.env.port
+const port = process.env.port ||3000
 
 app.use(morgan('dev'))
 app.use(cors())

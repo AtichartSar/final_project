@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
             count: { type: DataTypes.FLOAT }
         },
         { tableName: 'invoice', })
-    // model.associate = models => {
-        // model.hasMany(models.Order, { foreignKey: 'invoice_id' })
-        // model.hasOne(models.Employee, { foreignKey: 'invoice_id' })
+    model.associate = models => {
+        //จำเป็นต้องมี user
+        model.belongsTo(models.User, { foreignKey: 'user_order' });
 
-    // };
+    };
     return model
 }

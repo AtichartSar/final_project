@@ -3,9 +3,9 @@ import {
     UserAddOutlined,
     SettingOutlined,
     UserOutlined,
-
     BarChartOutlined,
     HomeOutlined,
+    PoweroffOutlined
   } from '@ant-design/icons';
 //   <SettingOutlined />
 {/* <UserOutlined /> */}
@@ -41,6 +41,11 @@ const components = {
         url:'/dashbord',
         label:'รายงานการขาย',
         icon:<BarChartOutlined style={{ fontSize: '28px', color: '#41AEA9' }} />
+    },
+    logout:{
+        label:'ออกจากระบบ',
+        logout:true,
+        icon:<PoweroffOutlined style={{ fontSize: '28px', color: '#41AEA9' }} />
     }
 }
 export default {
@@ -57,9 +62,9 @@ export default {
             components.home,
             components.profile,
             components.register,
-            components.login,
             components.dashbord,
             components.editmenu,
+            components.logout
         ]
     }
 }

@@ -57,11 +57,15 @@ export const cartSlice = createSlice({
             console.log("index",index);
             state.items.splice(index, 1)
         },
+        resetCart:(state)=>{
+            state.items = []
+        },
         cancelAllItem: (state, action) => {
             const newitems = state.items.filter((item) => item.id !== action.payload.id)
               state.items= newitems
 
         },
+        
         increment: state => {
             state.value += 1;
         },
@@ -81,7 +85,8 @@ export const {
     addToCart,
     increaseItem,
     decreaseItem,
-    cancelAllItem
+    cancelAllItem,
+    resetCart
 } = cartSlice.actions;
 
 

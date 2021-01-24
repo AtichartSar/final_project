@@ -10,7 +10,7 @@ const option = {
 const JwtStrategy = new Strategy(option, async (payload, done) => {
     //แนบ model user ไปกับ request
     const targetuser = await db.User.findOne({ where: { id: payload.id } })
-    console.log("targetuser......", targetuser);
+    console.log("targetuser.........>", targetuser);
     if (targetuser) {
         done(null, targetuser)
     } else {

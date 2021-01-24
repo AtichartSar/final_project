@@ -14,7 +14,8 @@ const loginUser = async (req,res)=>{
             const  payload = {
                 name:targetUser.username,
                 email:targetUser.name,
-                id:targetUser.id
+                id:targetUser.id,
+                role:targetUser.role
             }
             console.log("payload",payload)
             const key = process.env.SECRET_OR_KEY
